@@ -1,0 +1,30 @@
+Power BI DAX Measures
+=====================
+
+Total Sales = SUM(Sales_Data[Sales_INR])
+
+Total Profit = SUM(Sales_Data[Profit_INR])
+
+Total Orders = DISTINCTCOUNT(Sales_Data[Order_ID])
+
+Units Sold = SUM(Sales_Data[Units_Sold])
+
+Profit Margin % = DIVIDE([Total Profit], [Total Sales], 0)
+
+Average Order Value = DIVIDE([Total Sales], [Total Orders], 0)
+
+Power BI visuals to create
+--------------------------
+1. Cards: Total Sales, Total Profit, Total Orders, Profit Margin %.
+2. Line chart: Order_Date (Month) on X-axis, Total Sales on Y-axis.
+3. Clustered bar chart: Region on Y-axis, Total Sales and Total Profit as values.
+4. Donut chart: Category as Legend, Total Sales as Values.
+5. Table: Product, Units_Sold, Total Sales, Total Profit.
+6. Slicers: Order_Date, Region, Category.
+7. Format currency measures as Indian Rupees (₹) and Profit Margin as percentage.
+
+Power BI setup
+--------------
+Home > Get Data > Text/CSV > select sales_data.csv > Load.
+In Model view, ensure Order_Date is Date type and numeric columns are numeric.
+Create each measure above using Modeling > New measure.
